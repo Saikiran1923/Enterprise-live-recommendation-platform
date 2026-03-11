@@ -1,0 +1,24 @@
+experiments:
+  default_control: "control_v1"
+  traffic_allocation: 0.5
+  min_sample_size: 1000
+  confidence_level: 0.95
+
+active_experiments:
+  - id: "exp_001"
+    name: "two_tower_vs_mf"
+    variants:
+      - name: "control"
+        weight: 0.5
+        model: "matrix_factorization_v2"
+      - name: "treatment"
+        weight: 0.5
+        model: "two_tower_v1"
+    metrics: ["ctr", "watch_time", "retention"]
+    start_date: "2024-01-01"
+    end_date: "2024-02-01"
+
+metrics:
+  primary: "watch_time_per_session"
+  secondary: ["ctr", "like_rate", "share_rate"]
+  guardrail: ["unsubscribe_rate", "report_rate"]

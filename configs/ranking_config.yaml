@@ -1,0 +1,22 @@
+ranking:
+  top_k_candidates: 500
+  final_recommendations: 20
+  feature_weights:
+    engagement_score: 0.35
+    relevance_score: 0.30
+    freshness_score: 0.15
+    diversity_score: 0.10
+    trending_score: 0.10
+
+reranking:
+  diversity_window: 5
+  max_same_creator: 3
+  freshness_decay_hours: 24
+  trending_boost_factor: 1.2
+  exploration_fraction: 0.1
+
+filters:
+  min_video_duration_sec: 30
+  max_video_duration_sec: 7200
+  min_creator_trust_score: 0.5
+  blocked_categories: []
